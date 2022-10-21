@@ -21,9 +21,9 @@ life = 10 #les vie de l'utilisateur
 if lvlChoose == 1 :
     life = 10 
 elif lvlChoose == 2 :
-    life = 7 
+    life = 5 
 elif lvlChoose == 3 :
-    life = 4
+    life = 3
 
 #print("nombre de vies restant :",life)
 
@@ -41,20 +41,22 @@ for line in dico: # on crée une variable line qui va parcourir dico
 print(word)
 #------------------------Zone de jeu------------------------------------
 zone_Game = ""
+lettre_choisis = []
 
-lettre_choisis = ""
 for l in word: # je fait une boucle pour la zone de mot
     zone_Game = zone_Game + "_ " # la zone de mot qui correspond au nombre de mot a trouvé 
 
 
 while life > 0: #tant  que mes vies sont supérieur à 0 
     print("nombre de vies restant ",life) 
-    print("mot à deviner :   ", zone_Game)   
+    print(zone_Game)  
     proposition = input("Lettre proposées : ")
+    lettre_choisis.append(proposition)
+    print("lettre déja jouée" ,lettre_choisis) 
 
 # pas terminé, recherche de la problemeatique toujours en cours.
 if  proposition == word: # si ma proposition match avec une lettre dans le mot.
-    lettre_choisis = lettre_choisis + proposition
+    #lettre_choisis = lettre_choisis + proposition
     print("trouvé !")
 
 
