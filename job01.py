@@ -13,24 +13,20 @@
 #- Les lettres proposées qui se trouvent dans le mot
 #La partie prend fin lorsque le joueur a trouvé le mot, ou qu’il n’a plus de vie.
 
-
 import random
+#---------------Choix de niveau------------------
+lvlChoose = int(input("Bonjour, à quel niveau souhaite tu jouer? choisis entre 1 à 3: ")) #Je demande à quel niveau l'utilisateur veux jouer 
+life = 10 #les vie de l'utilisateur 
 
+if lvlChoose == 1 :
+    life = 10 
+elif lvlChoose == 2 :
+    life = 7 
+elif lvlChoose == 3 :
+    life = 4
 
-
-#if lvlChoose == 1 :
-#    life = 10 
-#elif lvlChoose == 2 :
-#    life = 7 
-#elif lvlChoose == 3 :
-#    life = 4
-#
 #print("nombre de vies restant :",life)
 
-#qui pourrait marcher !! 
-
-#lvlChoose = int(input("Bonjour, à quel niveau souhaite tu jouer: ")) #Je demande à quel niveau l'utilisateur veux jouer 
-life = 10 #les vie de l'utilisateur 
 
 file = open("dico_france.txt", "r") #dans la variable file on ouvre le fichier dico_france.txt 
 dico_list = [] # tableau vide prévu pour contenir le contenu de la variable dico
@@ -45,16 +41,20 @@ for line in dico: # on crée une variable line qui va parcourir dico
 print(word)
 #------------------------Zone de jeu------------------------------------
 zone_Game = ""
-entry_Word = input()
-for l in word:
-    zone_Game = zone_Game + "_ "
-if len(word) != entry_Word:
-    print("il vous reste",life-1,"vie")
+
+lettre_choisis = ""
+for l in word: # je fait une boucle pour la zone de mot
+    zone_Game = zone_Game + "_ " # la zone de mot qui correspond au nombre de mot a trouvé 
 
 
-     
+while life > 0: #tant  que mes vies sont supérieur à 0 
+    print("nombre de vies restant ",life) 
+    print("mot à deviner :   ", zone_Game)   
+    proposition = input("Lettre proposées : ")
 
-#    
-print(zone_Game)
-print(len(word))
-    
+# pas terminé, recherche de la problemeatique toujours en cours.
+if  proposition == word: # si ma proposition match avec une lettre dans le mot.
+    lettre_choisis = lettre_choisis + proposition
+    print("trouvé !")
+
+
