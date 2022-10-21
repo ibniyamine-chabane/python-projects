@@ -33,19 +33,28 @@ import random
 life = 10 #les vie de l'utilisateur 
 
 file = open("dico_france.txt", "r") #dans la variable file on ouvre le fichier dico_france.txt 
-list = [] #tableau vide 
-dico = file.readlines() #dans la variable dico stocke la lecture de la var file.
-word = random.choice(dico) #
-#file.close()
-for line in dico:
-    line = line.replace("\n", "")
-    list.append(line)
-zone_Game = "_"
-w = random.choice(list)
-print(w)
+dico_list = [] # tableau vide prévu pour contenir le contenu de la variable dico
+dico = file.readlines() #dans la variable dico stocke la lecture de la variable file.
 
-for l in w:
-    zone_Game = zone_Game + "_"
-    print(zone_Game)
-    print(w)
+#------------------------Lecture du dictionnaire------------------------
+for line in dico: # on crée une variable line qui va parcourir dico
+    line = line.replace("\n", "")# line remplace "\n" par une chaine vide ""
+    dico_list.append(line)# on envoie le nouveau contenu de line qui n'a plus de "\n" vers dico liste qui était vide
+    word = random.choice(dico_list)# on prend des élement au hasard dans notre 
+    
+print(word)
+#------------------------Zone de jeu------------------------------------
+zone_Game = ""
+entry_Word = input()
+for l in word:
+    zone_Game = zone_Game + "_ "
+if len(word) != entry_Word:
+    print("il vous reste",life-1,"vie")
+
+
+     
+
+#    
+print(zone_Game)
+print(len(word))
     
