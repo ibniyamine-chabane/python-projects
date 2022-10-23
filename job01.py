@@ -15,7 +15,7 @@
 
 import random
 #---------------Choix de niveau------------------
-lvlChoose = int(input("Bonjour, à quel niveau souhaite tu jouer? choisis entre 1 à 3: ")) #Je demande à quel niveau l'utilisateur veux jouer 
+lvlChoose = int(input("Bonjour, à quel niveau souhaite tu jouer? choisis entre 1: Débutant, 2: Intermédiaire, 3:Expert ")) #Je demande à quel niveau l'utilisateur veux jouer 
 life = 10 #les vie de l'utilisateur 
 
 if lvlChoose == 1 :
@@ -71,5 +71,6 @@ while life > 0: #tant  que mes vies sont supérieur à 0
         break
 
     if "_" not in zone_Game:
+        print (zone_Game)
         print("Bravo vous avez trouvé toute les lettres")
         break
